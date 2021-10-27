@@ -3,7 +3,7 @@
 class Pessoa
 {
     protected string $nome;
-    protected CPF $cpf;
+    private CPF $cpf;
 
     public function __construct(string $nome, CPF $cpf)
     {
@@ -24,7 +24,7 @@ class Pessoa
         return $this->cpf->getNumeroCpf();
     }
 
-    public function validaNomeTitular(string $nomeTitular)
+    protected function validaNomeTitular(string $nomeTitular)
     {
         if (strlen($nomeTitular) < 5) {
             echo "Nome precisa ter pelo menos 5 caracteres";
