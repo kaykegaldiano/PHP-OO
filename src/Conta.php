@@ -49,22 +49,10 @@ class Conta
         return $this->saldo;
     }
 
-    // setter do cpf
-    public function defineCpfTitular(string $cpf): void
-    {
-        $this->cpfTitular = $cpf;
-    }
-
     // getter do cpf
     public function recuperaCpfTitular(): string
     {
         return $this->cpfTitular;
-    }
-
-    // setter do nome
-    public function defineNomeTitular(string $nome): void
-    {
-        $this->nomeTitular = $nome;
     }
 
     // getter do nome
