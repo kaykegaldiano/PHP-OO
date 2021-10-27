@@ -2,22 +2,21 @@
 
 class Conta
 {
-    private string $cpfTitular;
-    private string $nomeTitular;
+    private Titular $titular;
     private float $saldo;
     private static int $numeroDeContas = 0;
 
-    public function __construct(string $cpfTitular, string $nomeTitular)
+    // construtor da classe
+    public function __construct(Titular $titular)
     {
-        $this->cpfTitular = $cpfTitular;
-        $this->validaNomeTitular($nomeTitular);
-        $this->nomeTitular = $nomeTitular;
+        $this->titular = $titular;
         $this->saldo = 0;
 
         // incrementa a cada vez que uma conta é criada
         self::$numeroDeContas++;
     }
 
+    // destrutor da classe
     public function __destruct()
     {
         self::$numeroDeContas--;
@@ -59,24 +58,15 @@ class Conta
         return $this->saldo;
     }
 
-    // getter do cpf
-    public function recuperaCpfTitular(): string
-    {
-        return $this->cpfTitular;
-    }
-
     // getter do nome
     public function recuperaNomeTitular(): string
     {
-        return $this->nomeTitular;
+        return $this->titular->getNome();
     }
 
-    private function validaNomeTitular(string $nomeTitular)
+    public function recuperaCpfTitular()
     {
-        if (strlen($nomeTitular) < 5) {
-            echo "Nome precisa ter pelo menos 5 caracteres";
-            exit;
-        }
+        return $this->titular->getCpf();
     }
 
     // metodo estatico para recuperar o número de contas criadas
