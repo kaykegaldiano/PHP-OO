@@ -1,9 +1,11 @@
 <?php
 
-require_once 'src/Conta.php';
-require_once 'src/Endereco.php';
-require_once 'src/Titular.php';
-require_once 'src/CPF.php';
+require_once 'autoload.php';
+
+use Alura\Banco\Model\Endereco;
+use Alura\Banco\Model\Conta\Titular;
+use Alura\Banco\Model\CPF;
+use Alura\Banco\Model\Conta\Conta;
 
 $endereco = new Endereco('Ribeirão Preto', 'Vila Virgínia', 'Julio de Mesquita', '1392');
 $kayke = new Titular(new CPF('454.104.348-38'), 'Kayke Galdiano', $endereco);
