@@ -18,5 +18,10 @@ $outroEndereco = new Endereco(
     '50'
 );
 
+$umEndereco->cidade = 'Ituverava';
+echo $umEndereco->cidade;
+
+exit;
+
 echo $umEndereco . PHP_EOL;
 echo $outroEndereco;
