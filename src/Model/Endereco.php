@@ -2,8 +2,18 @@
 
 namespace Alura\Banco\Model;
 
-class Endereco
+/**
+ * Class Endereco
+ * @package Alura\Banco\Model
+ * @property-read string $cidade
+ * @property-read string $bairro
+ * @property-read string $rua
+ * @property-read string $numero
+ */
+final class Endereco
 {
+    use AcessoPropriedades;
+
     private string $cidade;
     private string $bairro;
     private string $rua;
@@ -40,5 +50,10 @@ class Endereco
     public function __toString(): string
     {
         return "{$this->rua}, {$this->numero}, {$this->bairro}, {$this->cidade}";
+    }
+
+    public function __set(string $nomeAtributo, string $value): void
+    {
+        $this->$nomeAtributo = $value;
     }
 }
