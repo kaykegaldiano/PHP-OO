@@ -5,8 +5,8 @@ function funcao1()
     echo 'Entrei na função 1' . PHP_EOL;
     try {
         funcao2();
-    } catch(RuntimeException | DivisionByZeroError $e) {
-        echo 'Erro: ' . $e->getMessage() . PHP_EOL;
+    } catch(Throwable $e) {
+        echo $e->getMessage() . PHP_EOL;
         echo 'Linha ' . $e->getLine() . PHP_EOL;
         echo $e->getTraceAsString() . PHP_EOL;
     }
