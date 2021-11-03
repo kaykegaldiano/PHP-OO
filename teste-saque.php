@@ -3,7 +3,7 @@
 require_once 'autoload.php';
 
 // agrupando os namespaces
-use Alura\Banco\Model\Conta\{ContaPoupanca, ContaCorrente, Titular};
+use Alura\Banco\Model\Conta\{ContaPoupanca, ContaCorrente, SaldoInsuficienteException, Titular};
 use Alura\Banco\Model\{CPF, Endereco};
 
 $conta = new ContaPoupanca(
@@ -15,5 +15,12 @@ $conta = new ContaPoupanca(
 );
 
 $conta->deposita(500);
-$conta->saca(100);
+
+try {
+    $conta->saca(600);
+} catch (SaldoInsuficienteException $exception) {
+    echo "Você não tem saldo para realizar este saque." . PHP_EOL;
+    echo $exception->getMessage() . PHP_EOL;
+}
+
 echo $conta->recuperaSaldo();
