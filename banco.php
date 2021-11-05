@@ -1,6 +1,6 @@
 <?php
 
-require_once 'autoload.php';
+require_once 'vendor/autoload.php';
 
 use Alura\Banco\Model\Endereco;
 use Alura\Banco\Model\Conta\Titular;
