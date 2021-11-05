@@ -5,7 +5,7 @@ use Alura\Banco\Model\Conta\Titular;
 use Alura\Banco\Model\CPF;
 use Alura\Banco\Model\Endereco;
 
-require_once 'autoload.php';
+require_once 'vendor/autoload.php';
 
 $contaCorrente = new ContaCorrente(
     new Titular(
