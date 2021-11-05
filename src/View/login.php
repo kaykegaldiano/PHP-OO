@@ -1,3 +1,7 @@
+<?php
+namespace Alura\Banco\View;
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
