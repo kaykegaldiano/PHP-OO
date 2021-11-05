@@ -1,12 +1,2 @@
 /vendor/
-"autenticao.php"
-"banco.php"
-"bonificacoes.php"
-"enderecos.php"
-"erros.php"
-"excecao.php"
-"finally.php"
-"pilha.php"
-"teste-deposito.php"
-"teste-saque.php"
-"teste.php"
+/src/
