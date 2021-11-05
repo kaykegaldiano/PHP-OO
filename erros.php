@@ -19,4 +19,4 @@ set_error_handler(function($errno, $errstr, $errfile, $errline) {
 echo $variavel;
 echo $array[12];
 
-echo CONSTANTE;
+// echo CONSTANTE;
